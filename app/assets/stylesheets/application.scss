@@ -1,8 +1,11 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
-@import "bootstrap";
-@import "font-awesome-sprockets";
-@import "font-awesome";
-@import "custom";
-@import "list/new";
+@import 'bootstrap';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import 'custom';
+@import 'list/new';
 /* ここに追加する */
-@import "top";
+@import 'top';
+@import 'list/edit';
+
+@import 'top';
