@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_07_032432) do
+ActiveRecord::Schema.define(version: 2020_09_23_034426) do
+
+  create_table "cards", force: :cascade do |t|
+    t.string "title", limit: 255, null: false
+    t.text "memo", limit: 1000
+    t.integer "list_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_cards_on_list_id"
+  end
 
   create_table "lists", force: :cascade do |t|
     t.string "title", null: false
