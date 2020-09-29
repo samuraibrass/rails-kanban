@@ -4,9 +4,22 @@ body {
 
 .notice,
 .alert {
-  display: none;
+  animation-name: flash;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
 }
-
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
 // header
 .header {
   background: #026aa7;
@@ -47,8 +60,8 @@ body {
 
         .listNew {
           &:after {
-            font-family: "Font Awesome 5 Free";
-            content: "\f044";
+            font-family: 'Font Awesome 5 Free';
+            content: '\f044';
             display: inline-block;
             margin-left: 10px;
             font-size: 20px;
@@ -67,11 +80,11 @@ body {
   margin-top: 20px;
   padding: 10px;
   border-radius: 90px;
-  transition: opacity .5s;
+  transition: opacity 0.5s;
   cursor: pointer;
 
   &:hover {
-    opacity: .6;
+    opacity: 0.6;
   }
 }
 
@@ -105,17 +118,17 @@ body {
     margin-top: 20px;
     padding: 10px;
     border-radius: 90px;
-    transition: opacity .5s;
+    transition: opacity 0.5s;
 
     &:hover {
-      opacity: .6;
+      opacity: 0.6;
     }
   }
 }
 
 // devise_shared_links
 .acountPage_link {
-  &>a {
+  & > a {
     color: #0075c1;
   }
 }
@@ -150,11 +163,11 @@ body {
     border: none;
     margin-top: 20px;
     opacity: 1;
-    transition: opacity .5s;
+    transition: opacity 0.5s;
     cursor: pointer;
 
     &:hover {
-      opacity: .7;
+      opacity: 0.7;
     }
   }
 }

@@ -8,8 +8,10 @@ class ListController < ApplicationController
   def create
     @list = List.new(list_params)
     if @list.save
+      flash[:notice] = 'リストを作成しました'
       redirect_to :root
     else
+      flash.now[:alert] = 'リスト作成失敗！'
       render action: :new
       end
     end
@@ -18,6 +20,7 @@ class ListController < ApplicationController
     end
     def update
       if @list.update_attributes(list_params)
+        flash[:notice] = 'リストを更新しました'
         redirect_to :root
       else
         render action: :edit
@@ -25,6 +28,7 @@ class ListController < ApplicationController
     end
     def destroy
       @list.destroy
+      flash[:notice] = 'リストを削除しました'
       redirect_to :root
     end
     
