@@ -17,6 +17,7 @@ class CardController < ApplicationController
   end
 
   def edit
+    @lists = List.where(user_id: current_user.id)
   end
   def update
     if @card.update_attributes(card_params)
